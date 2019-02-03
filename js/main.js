@@ -34,8 +34,14 @@
     ],
 		
 		img: {
-			on: 'img/mute.png',
-			off: 'img/unmute.png'
+			on: {
+				src: 'img/mute.png',
+				title: '关闭'
+			},
+			off: {
+				src: 'img/unmute.png',
+				title: '打开'
+			},
 		},
 
     // What to do once video loads (initial frame)

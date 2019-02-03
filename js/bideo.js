@@ -68,10 +68,12 @@
 			self.voiceEl.addEventListener('click', function () {
 				if(self.videoEl.muted == true){
 					self.videoEl.muted = false; 
-					self.voiceEl.getElementsByTagName('img')[0].setAttribute('src', self.opt.img.on)
+					self.voiceEl.getElementsByTagName('img')[0].setAttribute('src', self.opt.img.on.src);
+					self.voiceEl.getElementsByTagName('img')[0].setAttribute('title', self.opt.img.on.title);
 				}else{
 					self.videoEl.muted = true;
-					self.voiceEl.getElementsByTagName('img')[0].setAttribute('src', self.opt.img.off)
+					self.voiceEl.getElementsByTagName('img')[0].setAttribute('src', self.opt.img.off.src);
+					self.voiceEl.getElementsByTagName('img')[0].setAttribute('title', self.opt.img.off.title);
 				}
 			});
 
