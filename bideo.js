@@ -15,6 +15,8 @@
     this.opt = null;
     // The Video element
     this.videoEl = null;
+		
+		this.voiceEl = null;
 
     // Approximate Loading Rate
     //
@@ -60,6 +62,18 @@
           if (self.opt.autoplay !== false) self.videoEl.play();
         }
       });
+			
+			self.voiceEl = opt.voiceEl;
+			
+			self.voiceEl.addEventListener('click', function () {
+				if(self.videoEl.muted == true){
+					self.videoEl.muted = false; 
+					self.voiceEl.getElementsByTagName('img')[0].setAttribute('src', self.opt.img.on)
+				}else{
+					self.videoEl.muted = true;
+					self.voiceEl.getElementsByTagName('img')[0].setAttribute('src', self.opt.img.off)
+				}
+			});
 
       // If resizing is required (resize video as window/container resizes)
       if (self.opt.resize) {
@@ -68,7 +82,7 @@
 
       // Start time of video initialization
       this.startTime = (new Date()).getTime();
-
+			
       // Create `source` for video
       this.opt.src.forEach(function (srcOb, i, arr) {
         var key

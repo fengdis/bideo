@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <head>
 	<meta charset="utf-8">
 	<meta content="width=device-width, initial-scale=1" name="viewport">
@@ -50,7 +50,7 @@
 			width: 100%;
 			height: 100%;
 
-			background: url('video_cover.jpeg') no-repeat;
+			background: url('img/video_cover.jpeg') no-repeat;
 			background-size: cover;
 			background-position: center;
 		}
@@ -103,7 +103,7 @@
 			z-index: 2;
 			position: absolute;
 			display: inline-block;
-			top: 3%;
+			top: 10%;
 			left: 3%;
 			transform: translateY(-50%);
 		}
@@ -212,9 +212,35 @@
 			background: url(img/footerflex.png) 1px top no-repeat;
 			display: none;
 		}
+		
+		#header {
+			z-index: 2;
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+		}
+		.header_left{
+			float: left;
+			margin: 30px 0 0 50px;
+			cursor: pointer;
+		}
+		.header_left img{
+			width: 50px;
+			height: 50px;
+		}
+		.header_right{
+			float: right;
+			margin: 40px 50px 0 0;
+			cursor: pointer;
+		}
+		.header_right img{
+			width: 25px;
+			height: 25px;
+		}
 	</style>
 
-	<script src="https://use.typekit.net/nlq1kdt.js"></script>
+	<!-- <script src="https://use.typekit.net/nlq1kdt.js"></script> -->
 	<script>
 		try {
 			Typekit.load({
@@ -224,6 +250,15 @@
 	</script>
 </head>
 <body>
+	<header id="header">
+		<div class="header_left">
+			<img src="img/logo.png"/>
+		</div>
+		<div class="header_right" id="background_voice">
+			<img src="img/unmute.png"/>
+		</div>
+	</header>
+	
 	<div id="container">
 		<video id="background_video" loop muted></video>
 		<div id="video_cover"></div>
@@ -231,18 +266,21 @@
 
 		<div id="video_controls">
 			<span id="play">
-				<img src="play.png">
+				<img src="img/play.png">
 			</span>
 			<span id="pause">
-				<img src="pause.png">
+				<img src="img/pause.png">
 			</span>
 		</div>
 		
-		<section id="main_head">
-			<div style="position: fixed;top: 10px;left: 10px;">
+		<!-- <section id="main_head">
+			<div style="float: left;">
 				<img style="width: 50px;height: 50px;" src="img/120.png"/>
 			</div>
-		</section>
+			<div style="float: right;">
+				<img style="width: 25px;height: 25px;" src="img/unmute.png"/>
+			</div>
+		</section> -->
 
 		<section id="main_content">
 			<div id="head">
