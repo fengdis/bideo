@@ -158,11 +158,11 @@ body {
 #footer span {
 	color: rgba(255, 255, 255, 0.5);
 	text-decoration: none;
-	margin: 10px 0 10px 0;
+	margin: 5px 0 10px 0;
 	font-size: 12px;
 }
 
-#footer a:first-child {
+/*#footer a:first-child {
 	margin-left: 10px;
 	float: left;
 }
@@ -170,7 +170,7 @@ body {
 #footer a:last-child {
 	margin-right: 10px;
 	float: right;
-}
+}*/
 
 #footer span:first-child {
 	cursor: pointer;
