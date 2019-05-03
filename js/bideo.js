@@ -16,7 +16,7 @@
     // The Video element
     this.videoEl = null;
 		
-		this.voiceEl = null;
+	this.voiceEl = null;
 
     // Approximate Loading Rate
     //
@@ -104,6 +104,9 @@
       });
 
       if (self.opt.isMobile) {
+        //手机端播放
+        //self.videoEl.play();
+
         if (self.opt.playButton) {
           self.opt.videoEl.addEventListener('timeupdate', function () {
             if (!self.onLoadCalled) {
@@ -111,7 +114,6 @@
               self.onLoadCalled = true;
             }
           });
-
 
           self.opt.playButton.addEventListener('click', function () {
             self.opt.pauseButton.style.display = 'inline-block';

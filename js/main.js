@@ -4,8 +4,8 @@
   bv.init({
     // Video element
     videoEl: document.querySelector('#background_video'),
-		
-		voiceEl: document.querySelector('#background_voice'),
+
+    voiceEl: document.querySelector('#background_voice'),
 
     // Container element
     container: document.querySelector('body'),
@@ -19,6 +19,9 @@
 
     playButton: document.querySelector('#play'),
     pauseButton: document.querySelector('#pause'),
+
+    //playButton: document.querySelector('#playBtn'),
+    //pauseButton: document.querySelector('#pauseBtn'),
 
     // Array of objects containing the src and type
     // of different video formats to add

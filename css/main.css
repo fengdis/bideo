@@ -43,6 +43,7 @@ body {
 }
 
 #video_controls {
+	z-index: 9;
 	position: absolute;
 	left: 50%;
 	transform: translate(-50%, 0);
@@ -52,8 +53,12 @@ body {
 	width: 100px;
 }
 
+#play {
+
+}
+
 #pause img {
-	width: 90px;
+	width: 100px;
 }
 
 #pause {
@@ -87,7 +92,6 @@ body {
 }
 
 #main_head {
-	z-index: 2;
 	position: absolute;
 	display: inline-block;
 	top: 10%;
