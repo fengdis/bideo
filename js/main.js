@@ -27,11 +27,11 @@
     // of different video formats to add
     src: [
       {
-        src: 'http://qiniu.fengdis.com/files/video22.mp4',
+        src: '1.mp4',
         type: 'video/mp4'
       },
       {
-        src: 'http://qiniu.fengdis.com/files/video22.webm',
+        src: '1.webm',
         type: 'video/webm;codecs="vp8, vorbis"'
       }
     ],
