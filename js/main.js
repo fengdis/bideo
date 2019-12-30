@@ -27,11 +27,11 @@
     // of different video formats to add
     src: [
       {
-        src: '1.mp4',
+        src: 'video.mp4',
         type: 'video/mp4'
       },
       {
-        src: '1.webm',
+        src: 'video.webm',
         type: 'video/webm;codecs="vp8, vorbis"'
       }
     ],
