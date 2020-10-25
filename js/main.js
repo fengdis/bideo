@@ -72,14 +72,14 @@
         date.toLocaleString(); //获取日期与时间
         var today = date.getMonth() + 1 + "" + date.getDate();
         if ('0101' === today) {
-            videoArray[0] = '../files/newYear.mp4';
-            videoArray[1] = '../files/newYear.webm';
+            videoArray[0] = 'files/newYear.mp4';
+            videoArray[1] = 'files/newYear.webm';
         } else if ('1024' === today) {
-            videoArray[0] = '../files/programmer.mp4';
-            videoArray[1] = '../files/programmer.webm';
+            videoArray[0] = 'files/programmer.mp4';
+            videoArray[1] = 'files/programmer.webm';
         } else {
-            videoArray[0] = '../files/fengdis.mp4';
-            videoArray[1] = '../files/fengdis.webm';
+            videoArray[0] = 'files/fengdis.mp4';
+            videoArray[1] = 'files/fengdis.webm';
         }
         return videoArray;
     }
