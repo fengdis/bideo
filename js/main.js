@@ -111,13 +111,9 @@
             async : false,
             method : 'get',
             data : {
-                keyword : '',
-                page : 1,
-                rows : 15,
-                sort : 'createdate',
-                order : 'desc'
+                keyword : ''
             },
-            url : 'https://www.fengdis.com/blog/blog/web/article/articles',
+            url : '',
             success : function(res) {
                 console.log(res)
             },
