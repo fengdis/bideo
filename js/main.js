@@ -1,5 +1,6 @@
 (function() {
     var bv = new Bideo();
+
     bv.init({
         // Video element
         videoEl: document.querySelector('#background_video'),
@@ -18,10 +19,12 @@
         playButton: document.querySelector('#play'),
         pauseButton: document.querySelector('#pause'),
 
-        //playButton: document.querySelector('#playBtn'),
-        //pauseButton: document.querySelector('#pauseBtn'),
+        // playButton: document.querySelector('#playBtn'),
+        // pauseButton: document.querySelector('#pauseBtn'),
         // Array of objects containing the src and type
         // of different video formats to add
+        // src = 'https://qiniu.fengdis.com/files/fengdis.mp4';
+        // src = 'https://qiniu.fengdis.com/files/fengdis.webm';
         src: [
             {
                 src: getTodayVideo()[0],
@@ -51,6 +54,8 @@
 
     });
 
+    getClientIp();
+
     function getTodayVideo() {
         var videoArray = [];
         var date = new Date();
@@ -67,11 +72,11 @@
         date.toLocaleString(); //获取日期与时间
         var today = date.getMonth() + 1 + "" + date.getDate();
         if ('0101' === today) {
-            videoArray[0] = 'https://qiniu.fengdis.com/files/newYear.mp4';
-            videoArray[1] = 'https://qiniu.fengdis.com/files/newYear.webm';
+            videoArray[0] = '../files/newYear.mp4';
+            videoArray[1] = '../files/newYear.webm';
         } else if ('1024' === today) {
-            videoArray[0] = '../programmer.mp4';
-            videoArray[1] = '../programmer.webm';
+            videoArray[0] = '../files/programmer.mp4';
+            videoArray[1] = '../files/programmer.webm';
         } else {
             videoArray[0] = '../files/fengdis.mp4';
             videoArray[1] = '../files/fengdis.webm';
@@ -99,5 +104,30 @@
         if (/(y+)/.test(fmt)) fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
         for (var k in o) if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
         return fmt;
+    }
+
+    function requestApi(callback) {
+        $$.ajax({
+            async : false,
+            method : 'get',
+            data : {
+                keyword : '',
+                page : 1,
+                rows : 15,
+                sort : 'createdate',
+                order : 'desc'
+            },
+            url : 'https://www.fengdis.com/blog/blog/web/article/articles',
+            success : function(res) {
+                console.log(res)
+            },
+            error : function() {
+
+            }
+        });
+    }
+
+    function getClientIp() {
+        console.log(returnCitySN);
     }
 } ());
