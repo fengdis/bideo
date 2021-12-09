@@ -27,11 +27,11 @@
         // src = 'https://qiniu.fengdis.com/files/fengdis.webm';
         src: [
             {
-                src: getTodayVideo()[0],
+                src: getVideoFileName() + '.mp4',
                 type: 'video/mp4'
             },
             {
-                src: getTodayVideo()[1],
+                src: getVideoFileName() + '.webm',
                 type: 'video/webm;codecs="vp8, vorbis"'
             }
         ],
@@ -56,8 +56,29 @@
 
     getClientIp();
 
-    function getTodayVideo() {
-        var videoArray = [];
+    disableMouseRight();
+
+    /**
+     * 获取客户端ip地址
+     */
+    function getClientIp() {
+        console.log(returnCitySN);
+    }
+
+    /**
+     * 禁用页面鼠标右键
+     */
+    function disableMouseRight() {
+        document.oncontextmenu = function(){
+            return false;
+        }
+    }
+
+    /**
+     * 获取当天视频
+     */
+    function getVideoFileName() {
+        var videoFileName;
         var date = new Date();
         date.getFullYear(); //获取完整的年份(4位,1970-????)
         date.getMonth(); //获取当前月份(0-11,0代表1月)
@@ -70,18 +91,17 @@
         date.getMilliseconds(); //获取当前毫秒数(0-999)
         date.toLocaleDateString(); //获取当前日期
         date.toLocaleString(); //获取日期与时间
-        var today = date.getMonth() + 1 + "" + date.getDate();
+        var today = (date.getMonth() + 1).toString().padStart(2, "0") + date.getDate().toString().padStart(2, "0");
         if ('0101' === today) {
-            videoArray[0] = 'files/newYear.mp4';
-            videoArray[1] = 'files/newYear.webm';
+            videoFileName = 'files/2022-newYear';
+        } else if ('1001' === today) {
+            videoFileName = 'files/nationalDay';
         } else if ('1024' === today) {
-            videoArray[0] = 'files/programmer.mp4';
-            videoArray[1] = 'files/programmer.webm';
+            videoFileName = 'files/programmerDay';
         } else {
-            videoArray[0] = 'files/fengdis.mp4';
-            videoArray[1] = 'files/fengdis.webm';
+            videoFileName = 'files/fengdis';
         }
-        return videoArray;
+        return videoFileName;
     }
 
     function formatDate(fmt) {
@@ -121,9 +141,5 @@
 
             }
         });
-    }
-
-    function getClientIp() {
-        console.log(returnCitySN);
     }
 } ());
